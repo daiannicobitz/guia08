@@ -1,0 +1,127 @@
+package frsf.isi.died.guia08.problema01.modelo;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+import frsf.isi.died.guia08.problema01.excepciones.ExcepcionNoExisteTareaAsignada;
+import frsf.isi.died.guia08.problema01.excepciones.ExcepcionTareaYaTieneEmpleadoAsignado;
+
+public class Empleado {
+
+	public enum Tipo { CONTRATADO,EFECTIVO}; 
+	
+	private Integer cuil;
+	private String nombre;
+	private Tipo tipo;
+	private Double costoHora;
+	private List<Tarea> tareasAsignadas;
+	
+	private Function<Tarea, Double> calculoPagoPorTarea=(tarea)-> ((tarea.getFechaFin().getDayOfYear()-tarea.getFechaInicio().getDayOfYear())*4*this.costoHora);		
+	private Predicate<Tarea> puedeAsignarTarea;
+
+	
+	public Double salario() {
+		Double salario=0.0;
+		
+		for(Tarea t:this.tareasAsignadas) {
+			if(t.getFechaFin()==null) {
+				salario=salario+(t.getDuracionEstimada()*this.costoHora);
+			}else {salario=salario+this.calculoPagoPorTarea.apply(t);}
+		}
+		
+		return salario;
+	}
+	
+	/**
+	 * Si la tarea ya fue terminada nos indica cuaal es el monto según el algoritmo de calculoPagoPorTarea
+	 * Si la tarea no fue terminada simplemente calcula el costo en base a lo estimado.
+	 * @param t
+	 * @return
+	 */
+	public Double costoTarea(Tarea t) {
+		return 0.0;
+	}
+		
+	public Boolean asignarTarea(Tarea t) throws ExcepcionTareaYaTieneEmpleadoAsignado{
+		boolean ret=false;
+		if(t.getEmpleadoAsignado()==null) {
+		if(this.tipo.compareTo(Tipo.CONTRATADO)==0) {
+			if(this.tareasAsignadas.size()<5) {
+				this.tareasAsignadas.add(t);
+				ret=true;
+			}
+		}else {
+			Integer sumaHoras=0;
+			for(int i=0; i<this.tareasAsignadas.size();i++) 
+				sumaHoras=sumaHoras+tareasAsignadas.get(i).getDuracionEstimada();
+			if((sumaHoras+t.getDuracionEstimada())<16) {
+				this.tareasAsignadas.add(t);
+				ret=true;
+			}
+		}
+		}else {
+			throw new ExcepcionTareaYaTieneEmpleadoAsignado("Esta tarea ya tiene un empleado asignado. Seleccione otra.");
+		}
+		return ret;
+	}
+	
+	public void comenzar(Integer idTarea) throws ExcepcionNoExisteTareaAsignada{
+		boolean bandera=false;
+		for (Tarea t:this.tareasAsignadas) {
+			if(t.getId().equals(idTarea)) {
+				bandera=true;
+				t.setFechaInicio(LocalDateTime.now());
+			}
+		}
+		if(!bandera) throw new ExcepcionNoExisteTareaAsignada();
+		
+	}
+	
+	public void finalizar(Integer idTarea) {
+		boolean bandera=false;
+		for (Tarea t:this.tareasAsignadas) {
+			if(t.getId().equals(idTarea)) {
+				bandera=true;
+				t.setFechaFin(LocalDateTime.now());
+			}
+		}
+		if(!bandera) throw new ExcepcionNoExisteTareaAsignada();
+	}
+
+	public void comenzar(Integer idTarea,String fecha) {
+		boolean bandera=false;
+		for (Tarea t:this.tareasAsignadas) {
+			if(t.getId().equals(idTarea)) {
+				bandera=true;
+				t.setFechaInicio(LocalDateTime.of(Integer.parseInt(fecha.substring(5, 10)),Integer.parseInt(fecha.substring(3, 6)),Integer.parseInt(fecha.substring(0, 3)),Integer.parseInt(fecha.substring(10, 13)),Integer.parseInt(fecha.substring(13, 16))));
+			}
+		}
+		if(!bandera) throw new ExcepcionNoExisteTareaAsignada();
+	}
+	
+	public void finalizar(Integer idTarea,String fecha) {
+		boolean bandera=false;
+		for (Tarea t:this.tareasAsignadas) {
+			if(t.getId().equals(idTarea)) {
+				bandera=true;
+				t.setFechaFin(LocalDateTime.of(Integer.parseInt(fecha.substring(5, 10)),Integer.parseInt(fecha.substring(3, 6)),Integer.parseInt(fecha.substring(0, 3)),Integer.parseInt(fecha.substring(10, 13)),Integer.parseInt(fecha.substring(13, 16))));
+			}
+		}
+		if(!bandera) throw new ExcepcionNoExisteTareaAsignada();
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public List<Tarea> getTareasAsignadas() {
+		return tareasAsignadas;
+	}
+	
+	public void agregarTarea(Tarea t) {
+		this.tareasAsignadas.add(t);
+	}
+}
