@@ -1,0 +1,17 @@
+2020-05-28 21:25:37,485 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-05-28 21:43:24,678 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-05-28 22:44:12,556 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-05-28 22:46:03,776 [Worker-10: Importing Maven projects] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.codehaus.plexus:plexus-utils:jar:2.0.4 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2020-05-28 22:46:04,158 [Worker-10: Importing Maven projects] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.codehaus.plexus:plexus-classworlds:jar:2.2.3 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2020-05-28 22:46:04,188 [Worker-10: Importing Maven projects] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.codehaus.plexus:plexus-utils:jar:2.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2020-05-28 22:46:08,417 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: frsf.isi.died2020:guia08:0.0.1-SNAPSHOT @ C:\Users\Usuario\git\guia08\pom.xml.
+2020-05-28 22:46:14,293 [Worker-10: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /guia08/src/main/java
+2020-05-28 22:46:14,305 [Worker-10: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /guia08/src/test/java
+2020-05-28 22:46:19,707 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 22:46:19,707 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\main\resources
+2020-05-28 22:46:19,713 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 22:46:19,714 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\test\resources
+2020-05-28 22:46:20,146 [Worker-10: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 23 sec
+2020-05-28 22:46:21,264 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 22:46:21,265 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\main\resources
+2020-05-28 22:46:21,268 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
