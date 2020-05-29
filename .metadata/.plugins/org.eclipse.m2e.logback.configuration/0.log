@@ -15,3 +15,10 @@
 2020-05-28 22:46:21,264 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-05-28 22:46:21,265 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\main\resources
 2020-05-28 22:46:21,268 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 22:46:21,269 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\test\resources
+2020-05-28 22:59:43,375 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-05-28 23:00:22,119 [Worker-13: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.codehaus.plexus:plexus-utils:jar:2.0.5 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2020-05-28 23:00:22,518 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 23:00:22,519 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\main\resources
+2020-05-28 23:00:22,522 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-05-28 23:00:22,522 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Usuario\git\guia08\src\test\resources
